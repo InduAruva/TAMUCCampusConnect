@@ -1,0 +1,61 @@
+<div id="loginModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title text-navy"><b>Login to ${initParam.appName}</b></h4>
+			</div>
+			<div class="modal-body" style="margin-top: 0em">
+				<div class="row" style="margin-left: 10%; margin-top: 0em">
+					<div class="col-sm-10">
+						<form:form action="login" modelAttribute="loginBean"
+							id="loginForm" method="POST">
+						
+
+									<div class="alert alert-danger alert-dismissable"
+										id="msgLblRed">
+
+										<button type="button" class="close" data-dismiss="alert"
+											aria-hidden="true">&times;</button>
+										<strong> ${FAILURE_MESSAGE}</strong>
+									</div>
+
+									<form:form id="loginForm" method="post" action="login"
+										modelAttribute="loginBean">
+										<div class="form-group has-feedback">
+											<form:input class="form-control" path="emailId" placeholder="Email Id *" />
+											<span style="color: red"><form:errors path="emailId"
+													cssClass="error" /></span> <span
+												class="glyphicon glyphicon-user form-control-feedback"></span>
+										</div>
+										<div class="form-group has-feedback">
+											<form:password path="password"
+												class="form-control" placeholder="Password *" />
+											<span style="color: red"><form:errors path="password"
+													cssClass="error" /></span> <span
+												class="glyphicon glyphicon-lock form-control-feedback"></span>
+										</div>
+										<div class="row">
+											<div class="col-xs-5">
+												<button type="submit" class="btn bg-yellow btn-block"
+													id="btnAddLogin">Login</button>
+
+											</div>
+											<div class="col-xs-6" id="btnForgotPass">
+												<b><a href="#" >Forgot your
+													password?</a></b>
+											</div>
+										</div>
+										<!-- /.col -->
+
+									</form:form>								
+						</form:form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

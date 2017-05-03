@@ -1,0 +1,33 @@
+
+<table id="headerTable" class="table"
+	style="border: none; padding-bottom: 0px; background-color: #001F3F; margin-bottom: 0em;">
+	<tbody>
+		<tr>
+			<td><img
+				src="<c:url value="/resources/images/tamucc_logo.jpg"/>"
+				class="user-image" alt="User Image"
+				style="height: 100px; width: 100px"></td>
+			<td colspan="4"><span
+				style="color: yellow; font: bolder; font-family: cursive;"><h1>${initParam.appName}</h1></span>
+				<div style="color: yellow; font: bolder; font-family: cursive;">
+					<span style="color: white"><h4>Texas A & M University - Commerce</h4>
+				</div></td>
+			<td><c:if test="${loggedUser==null}">
+					<div class="box-body">
+						<div class="box-body">
+							<div class="margin pull-right">
+								<div class="btn-group">
+									<button class="btn btn-lg bg-red " id="btnRegister" >Register</button>
+								</div>
+								<div class="btn-group">
+									<button class="btn btn-lg bg-yellow" id="btnLogin">Login</button>
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+				</c:if></td>
+		</tr>
+	</tbody>
+</table>

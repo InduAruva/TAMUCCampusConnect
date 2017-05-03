@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>TAMUCCampusConnect</display-name>
+
+	<servlet>
+		<servlet-name>TAMUCCampusConnect</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/resources/springWeb.xml</param-value>
+		</init-param>
+
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>TAMUCCampusConnect</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	<context-param>
+		<param-name>appName</param-name>
+		<param-value>TAMUC CAMPUS CONNECT</param-value>
+	</context-param>
+	<context-param>
+		<param-name>videoLocation</param-name>
+		<param-value>C:\TAMUC\Videos</param-value>
+	</context-param>
+	<session-config>
+		<session-timeout>15</session-timeout>
+	</session-config>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/404</location>
+	</error-page>
+</web-app>

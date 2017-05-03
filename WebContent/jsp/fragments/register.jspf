@@ -1,0 +1,97 @@
+<div id="registerModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title text-navy"><b>Register to ${initParam.appName}</b></h4>
+			</div>
+			<div class="modal-body" style="margin-top: 0em">
+				<div class="row" style="margin-left: 10%; margin-top: 0em">
+					<div class="col-sm-10">
+							<div class="alert alert-danger alert-dismissable" id="msgLblRedReg">
+
+								<button type="button" class="close" data-dismiss="alert"
+									aria-hidden="true">&times;</button>
+								<strong> ${FAILURE_MESSAGE}</strong>
+							</div>
+							<div class="alert alert-success alert-dismissable"
+								id="msgLblGreenReg">
+								<button type="button" class="close" data-dismiss="alert"
+									aria-hidden="true">&times;</button>
+								<h4>
+									<i class="icon fa fa-check"></i>Success!
+								</h4>
+								${SUCCESS_MESSAGE}
+							</div>
+							
+							<form:form id="registerForm" method="post" action="addUser"
+								modelAttribute="userBean">
+								<div class="form-group has-feedback">
+									<form:input class="form-control" path="fullName"
+										placeholder="Full Name *" />
+									<span style="color: red"><form:errors path="fullName"
+											cssClass="error" /></span> <span
+										class="glyphicon glyphicon-user form-control-feedback"></span>
+								</div>
+								<div class="form-group has-feedback">
+									<form:input class="form-control" path="emailId"
+										placeholder="Email Id *" />
+									<span style="color: red"><form:errors path="emailId"
+											cssClass="error" /></span> <span
+										class="glyphicon glyphicon-user form-control-feedback"></span>
+								</div>
+								<div class="form-group has-feedback">
+									<tamTag:RTSelect elementName="department"
+										referenceTableName="RT_DEPARTMENT"
+										placeHolder="Select Department *"
+										code="${userBean.department}">
+									</tamTag:RTSelect>
+									<span style="color: red"> <form:errors
+											path="department" cssClass="error" />
+									</span>
+								</div>
+								<div class="form-group has-feedback">
+									<tamTag:RTSelect elementName="securityQuestion"
+										referenceTableName="RT_SECURITY_QUESTIONS"
+										placeHolder="Select Security Question *"
+										code="${userBean.securityQuestion}">
+									</tamTag:RTSelect>
+									<span style="color: red"> <form:errors
+											path="securityQuestion" cssClass="error" />
+									</span>
+								</div>
+								<div class="form-group has-feedback">
+									<form:input path="securityAnswer" class="form-control"
+										placeholder="Security Answer *" />
+									<span style="color: red"><form:errors
+											path="securityAnswer" cssClass="error" /></span> <span
+										class="glyphicon glyphicon-lock form-control-feedback"></span>
+								</div>
+								<div class="form-group has-feedback">
+									<form:password id="password" name="password" path=""
+										class="form-control" placeholder="Password *" />
+									<span style="color: red"><form:errors path="password"
+											cssClass="error" /></span> <span
+										class="glyphicon glyphicon-lock form-control-feedback"></span>
+								</div>
+								<div class="row">
+									<div class="col-sm-offset-4 col-sm-6">
+										<button type="submit" class="btn bg-red btn-lg "
+											id="btnAddRegister">Register</button>
+
+									</div>
+									
+									
+								</div>
+								<!-- /.col -->
+
+							</form:form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
